@@ -69,6 +69,10 @@ ContBancar& ContBancar::operator=(const ContBancar& other) {
 
 // Getters și Setters
 std::string ContBancar::getNumeTitular(int index) const {
+    if (index < 0 || index >= numarConturi) {
+        throw std::out_of_range("Indexul este în afara limitelor.");
+}
+
     return numeTitulari[index];
 }
 
@@ -77,6 +81,10 @@ void ContBancar::setNumeTitular(int index, const std::string& nume) {
 }
 
 double ContBancar::getSold(int index) const {
+    if (index < 0 || index >= numarConturi) {
+        throw std::out_of_range("Indexul este în afara limitelor.");
+}
+
     return solduri[index];
 }
 
